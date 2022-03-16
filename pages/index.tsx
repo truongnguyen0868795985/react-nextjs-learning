@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import type { NextPage } from 'next'
+import Link from 'next/link'
+import { MainLayout } from '@/components/layout'
+import { NextPageWithLayout } from '@/models/common'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +19,9 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">G** Truong</a>
         </h1>
 
+        <Link href="/about">
+          <a>Go to about</a>
+        </Link>
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
         </p>
@@ -62,5 +67,7 @@ const Home: NextPage = () => {
     </div>
   )
 }
+
+Home.Layout = MainLayout
 
 export default Home
