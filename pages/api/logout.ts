@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import Cookies from 'cookies'
 import httpProxy from 'http-proxy'
 
 // type Data = {
@@ -15,11 +15,11 @@ export const config = {
 const proxy = httpProxy.createProxyServer()
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
-  req.headers.cookie = ''
+  if (req.method !== 'POST') {
+    res.status(404).json({ message: 'Invalid method' })
+  }
 
-  proxy.web(req, res, {
-    target: process.env.API_URL,
-    changeOrigin: true,
-    selfHandleResponse: false,
-  })
+  const cookies = new Cookies(req, res)
+  cookies.set('access_token')
+  res.status(200).json({ message: 'Logout successful' })
 }
