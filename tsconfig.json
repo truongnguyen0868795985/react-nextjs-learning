@@ -19,6 +19,8 @@
       "@/components/*": ["./components/*"],
       "@/styles/*": ["./styles/*"],
       "@/constant/*": ["./constant/*"],
+      "@/hooks/*": ["./hooks/*"],
+
       "@/models/*": ["./models/*"],
       "@/api/*": ["./api-client/*"]
     }
