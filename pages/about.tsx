@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components/layout'
+import { AdminLayout } from '@/components/layout'
 
 export interface AboutPageProps {}
 
@@ -10,4 +10,4 @@ export default function AboutPage({}: AboutPageProps) {
   )
 }
 
-AboutPage.Layout = MainLayout
+AboutPage.Layout = AdminLayout
