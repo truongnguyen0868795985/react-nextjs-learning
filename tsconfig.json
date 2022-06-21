@@ -20,9 +20,9 @@
       "@/styles/*": ["./styles/*"],
       "@/constant/*": ["./constant/*"],
       "@/hooks/*": ["./hooks/*"],
-
       "@/models/*": ["./models/*"],
-      "@/api/*": ["./api-client/*"]
+      "@/api/*": ["./api-client/*"],
+      "@/utils/*": ["./utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
