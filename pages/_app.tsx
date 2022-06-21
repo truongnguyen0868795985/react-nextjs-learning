@@ -1,5 +1,3 @@
-import '../styles/globals.css'
-
 import { createEmotionCache, theme } from '@/utils/index'
 
 import { AppPropsWithLayout } from '@/models/index'
@@ -21,7 +19,7 @@ function MyApp({
   const Layout = Component.Layout ?? EmptyLayout
 
   return (
-    <CacheProvider value={emotionCache}>
+    <CacheProvider value={clientSideEmotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
 

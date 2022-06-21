@@ -1,6 +1,7 @@
 import { PublicConfiguration } from 'swr/dist/types'
 import { authApi } from '../api-client'
 import useSWR from 'swr'
+
 export function useAuth(options?: Partial<PublicConfiguration>) {
   // profile
   //
@@ -9,7 +10,7 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     data: profile,
     error,
     mutate,
-  } = useSWR('/profile', {
+  } = useSWR<any>('/profile', {
     dedupingInterval: 60000,
     revalidateOnFocus: false,
     ...options,
