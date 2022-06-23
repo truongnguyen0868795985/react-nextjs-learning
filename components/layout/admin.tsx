@@ -1,7 +1,7 @@
 import { Auth } from '@/components/common'
 import { LayoutProps } from '@/models/common'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/index'
+import { useAuth } from '@/hooks'
 import { useRouter } from 'next/router'
 
 export interface AdminLayoutProps {}

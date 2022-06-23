@@ -1,14 +1,16 @@
+import { FeaturedWorks, HeroSection } from '@/components/home'
+
 import { Box } from '@mui/material'
-import { HeroSection } from '@/components/home'
 import { MainLayout } from '@/components/layout'
 import { NextPageWithLayout } from '@/models/common'
-import { RecentPosts } from '@/components/home/index'
+import { RecentPosts } from '@/components/home'
 
 const Home: NextPageWithLayout = () => {
   return (
     <Box>
       <HeroSection></HeroSection>
       <RecentPosts />
+      <FeaturedWorks />
     </Box>
   )
 }

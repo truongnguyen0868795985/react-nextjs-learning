@@ -1,5 +1,5 @@
 import { authApi } from '../api-client'
-import { useAuth } from '@/hooks/index'
+import { useAuth } from '@/hooks'
 import { useRouter } from 'next/router'
 
 type Props = {}

@@ -1,7 +1,7 @@
 import { Box, Container, Link as MuiLink, Stack, Typography } from '@mui/material'
 
 import Link from 'next/link'
-import { Post } from '@/models/index'
+import { Post } from '@/models'
 import PostCard from './post-card'
 import React from 'react'
 

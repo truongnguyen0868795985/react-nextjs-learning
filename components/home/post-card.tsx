@@ -1,6 +1,6 @@
-import { Card, CardContent, Divider, Typography } from '@mui/material'
+import { Box, Card, CardContent, Divider, Stack, Typography } from '@mui/material'
 
-import { Post } from '@/models/index'
+import { Post } from '@/models'
 import React from 'react'
 
 type Props = {
@@ -15,13 +15,14 @@ export default function PostCard({ post }: Props) {
         <Typography variant="h5" fontWeight="bold">
           {post.title}
         </Typography>
-        <Typography variant="body1" my={2} sx={{ display: 'flex' }}>
-          {post.publishedDate}
+
+        <Stack direction="row" my={2}>
+          <Typography variant="body1">{post.publishedDate}</Typography>
 
           <Divider orientation="vertical" sx={{ mx: 2 }} flexItem />
+          <Typography variant="body1">{post.tagList.join(', ')}</Typography>
+        </Stack>
 
-          {post.tagList.join(', ')}
-        </Typography>
         <Typography variant="body2">{post.description}</Typography>
       </CardContent>
     </Card>
