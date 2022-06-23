@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 
 import PostCard from '../home/post-card'
 import { Work } from '@/models'
+import { WorkCard } from './work-card'
 
 type Props = {
   workList: Work[]
@@ -15,8 +16,8 @@ export function WorkList({ workList }: Props) {
     <Box>
       {workList.map((work) => (
         <Fragment key={work.id}>
-          <Box>{work.title}</Box>
-          <Divider my={3} />
+          <WorkCard work={work} />
+          <Divider sx={{ my: 3 }} />
         </Fragment>
       ))}
     </Box>
