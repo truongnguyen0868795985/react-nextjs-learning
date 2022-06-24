@@ -10,7 +10,7 @@ export interface PostListPageProps {
 }
 
 export default function PostListPage({ posts }: PostListPageProps) {
-  // console.log('posts', posts)
+  console.log('posts', posts)
 
   return (
     <div>
@@ -40,11 +40,11 @@ export const getStaticProps: GetStaticProps<PostListPageProps> = async (
   // console.log(data)
 
   // convert markdown files into list of javascript objects
-  const data = await getPostList()
+  const postList = await getPostList()
 
   return {
     props: {
-      posts: data.map((x: any) => ({ id: x.id, title: x.title })),
+      posts: postList,
     },
   }
 }
