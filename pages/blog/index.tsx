@@ -1,35 +1,45 @@
 import * as React from 'react'
 
+import { Box, Container, Divider } from '@mui/material'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 
 import Link from 'next/link'
+import { MainLayout } from '@/components/layout'
+import { PostItem } from '@/components/blog'
 import { getPostList } from '@/utils/posts'
 
-export interface PostListPageProps {
+export interface BlogListPageProps {
   posts: any[]
 }
 
-export default function PostListPage({ posts }: PostListPageProps) {
+export default function BlogListPage({ posts }: BlogListPageProps) {
   console.log('posts', posts)
 
   return (
-    <div>
-      <h1>Post List Page</h1>
+    <Box>
+      <Container>
+        <h1>Blog</h1>
 
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              <a>{post.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <Box component="ul" sx={{ listStyleType: 'none', p: 0 }}>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.slug}`}>
+                <a>
+                  <PostItem post={post} />
+                </a>
+              </Link>
+              <Divider sx={{ my: 3 }} />
+            </li>
+          ))}
+        </Box>
+      </Container>
+    </Box>
   )
 }
 
-export const getStaticProps: GetStaticProps<PostListPageProps> = async (
+BlogListPage.layout = MainLayout
+
+export const getStaticProps: GetStaticProps<BlogListPageProps> = async (
   context: GetStaticPropsContext
 ) => {
   // server-side
